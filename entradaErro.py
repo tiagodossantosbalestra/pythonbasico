@@ -5,7 +5,7 @@ while True:
             print("A idade deve ser maior que zero.")
         else:
             break
-    except valueError:
+    except ValueError:
         print("Digite apenas números inteiros.")
 
 print("Idade cadastrada: ", idade)
