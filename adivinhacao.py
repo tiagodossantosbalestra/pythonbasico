@@ -4,7 +4,7 @@ print('****jogo adivinhação*****')
 print('*************')
 
 numero_secreto = random.randrange(1,31)
-total_tentativas=3
+total_tentativas = 3
 
 for rodada in range(1, total_tentativas + 1):
     print("tentativa{} de {}".format(rodada,total_tentativas))
