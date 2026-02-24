@@ -1,24 +1,30 @@
-import random
+print('************')
+print('****jogo adivinhação*****')
+print('*************')
 
-# O computador escolhe um número aleatório entre 1 e 100
-numero_secreto = random.randint(1, 100)
+numero_secreto = 39
+total_tentativas=3
+rodada = 1
 
-tentativas = 0
-acertou = False
+while (rodada <= total_tentativas):
 
-print("🎯 Bem-vindo ao Jogo da Adivinhação!")
-print("Estou pensando em um número entre 1 e 100...")
+    chute_str = input("digite o seu número: ")
+    print("seu número é: ", chute_str)
 
-while not acertou:
-    palpite = int(input("Digite seu palpite: "))
-    tentativas += 1
+    chute = int(chute_str)
 
-    if palpite < numero_secreto:
-        print("🔼 Muito baixo! Tente novamente.")
-    elif palpite > numero_secreto:
-        print("🔽 Muito alto! Tente novamente.")
+    acertou = chute == numero_secreto
+    maior = chute > numero_secreto
+    menor = chute < numero_secreto
+
+    if(acertou):
+        print("você Acertou!! ")
+        break
     else:
-        acertou = True
-        print(f"🎉 Parabéns! Você acertou em {tentativas} tentativas.")
+        if(maior):
+            print("o seuchute foi maior que o numero secreto")
+        elif(menor):
+            print("o seu chute foi menor que o numero secreto")
+    rodada = rodada +1
 
-print("Fim de jogo!")
+print("fim de jogo!")
