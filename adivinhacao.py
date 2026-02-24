@@ -5,7 +5,9 @@ print('*************')
 
 numero_secreto = random.randrange(1,31)
 total_tentativas=3
-rodada = 1
+
+for rodada in range(1, total_tentativas + 1):
+    print("tentativa{} de {}".format(rodada,total_tentativas))
 
 while (rodada <= total_tentativas):
 
@@ -13,6 +15,10 @@ while (rodada <= total_tentativas):
     print("seu número é: ", chute_str)
 
     chute = int(chute_str)
+
+    if(chute< 1 or chute>30):
+        print("você deve digitar um número entre 1 e 30! ")
+        continue
 
     acertou = chute == numero_secreto
     maior = chute > numero_secreto
